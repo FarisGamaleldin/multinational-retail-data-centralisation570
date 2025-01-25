@@ -18,4 +18,3 @@ def clean_user_data(self, data):
     data.reset_index(drop=True, inplace=True)
 
     return data
-
