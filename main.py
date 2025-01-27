@@ -4,7 +4,7 @@ from data_cleaning import DataCleaning
 
 # Step 1: Initialize Classes
 db_connector = DatabaseConnector()   # Handles database connections
-extractor = DataExtractor()          # Extracts data from the RDS and PDFs
+extractor = DataExtractor()          # Extracts data from RDS and PDFs
 cleaner = DataCleaning()             # Cleans the data
 
 # Step 2: Extract Data from the legacy_users Table
@@ -38,7 +38,7 @@ except Exception as e:
     exit()
 
 # Step 5: Extract Data from PDF (card_details.pdf)
-pdf_path = r"D:\card_details.pdf"  # Update with the actual file path
+pdf_path = r"D:\card_details.pdf"  # Replace with the correct file path or URL
 print(f"Extracting data from PDF: {pdf_path}...")
 try:
     pdf_data = extractor.retrieve_pdf_data(pdf_path)
