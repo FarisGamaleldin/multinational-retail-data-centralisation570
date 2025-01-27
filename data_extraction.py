@@ -1,5 +1,6 @@
-import pandas as pd
 from tabula import read_pdf
+import pandas as pd
+
 
 class DataExtractor:
     def __init__(self):
@@ -36,10 +37,15 @@ class DataExtractor:
         try:
             print(f"Retrieving data from PDF: {pdf_link}")
             
-            # Extract tables from the PDF
-            data_frames = read_pdf(pdf_link, pages="all", multiple_tables=True, pandas_options={"header": None})
+            # Extract tables from all pages of the PDF
+            data_frames = read_pdf(
+                pdf_link, 
+                pages="all", 
+                multiple_tables=True, 
+                pandas_options={"header": None}
+            )
             
-            # Combine all extracted tables into a single DataFrame
+            # Combine all tables into a single DataFrame
             combined_data = pd.concat(data_frames, ignore_index=True)
             
             print("Data extraction from PDF complete.")
