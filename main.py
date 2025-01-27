@@ -38,7 +38,7 @@ except Exception as e:
     exit()
 
 # Step 5: Extract Data from PDF (card_details.pdf)
-pdf_path = r"D:\card_details.pdf"  # Replace with the correct file path or URL
+pdf_path = r"C:\Users\faris\Desktop\card_details.pdf"  # Replace with the correct file path or URL
 print(f"Extracting data from PDF: {pdf_path}...")
 try:
     pdf_data = extractor.retrieve_pdf_data(pdf_path)
